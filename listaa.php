@@ -5,7 +5,7 @@ echo "<html>
 <title>Listaus</title> 
 <body>";
 $query = "SELECT * FROM viite";
-$conn = pg_connect ("host=localhost dbname=vkukkola user=vkukkola password=94e578236c9fe980");
+$conn = pg_connect ("");
 if (!$conn)
 {
 	echo "something failed!";

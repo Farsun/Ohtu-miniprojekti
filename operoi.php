@@ -1,6 +1,6 @@
 <?php
 
-$dbdata = "host=localhost dbname=vkukkola user=vkukkola password=94e578236c9fe980";
+$dbdata = "";
 
 echo "<html><head></head><body>";
 

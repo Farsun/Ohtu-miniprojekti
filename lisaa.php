@@ -9,7 +9,9 @@
 <input type = \"submit\" value = \"lis&auml;&auml; mut!\"/>
  
  
-</form></body></html> ";
+</form>
+<a href=listaa.php> palaa</a>
+</body></html> ";
 
 
 
