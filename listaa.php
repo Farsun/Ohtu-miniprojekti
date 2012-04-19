@@ -4,8 +4,13 @@ echo "<html>
 <head>
 <title>Listaus</title> 
 <body>";
+
+
 $query = "SELECT * FROM viite";
-$conn = pg_connect ("");
+
+$dbdata="host=localhost dbname=ohtu user=ohtu password=ohtuproju";
+
+$conn = pg_connect ($dbdata);
 if (!$conn)
 {
 	echo "something failed!";
@@ -15,7 +20,7 @@ $result = pg_query($conn, $query);
 
 while  ($row = pg_fetch_row($result))
 {
-    for ($i = 1; $i< 4;$i++)
+    for ($i = 1; $i< count($row);$i++)
 
 	{
 		echo "$row[$i], ";
@@ -32,7 +37,21 @@ while  ($row = pg_fetch_row($result))
 }
 
 
-echo "<a href=\"lisaa.php\">Lis&auml;&auml; uusi!</a>";
+echo "<form action=\"lisaa.php\" method=\"post\">
+	<input type=\"radio\" name=\"viitetype\" value = \"@inproceeding\">Inproceeding
+	<input type=\"radio\" name =\"viitetype\" value=\"@book\">Book
+	<input type=\"radio\" name=\"viitetype\" value=\"@article\">Article
+	<input type=\"text\" name=\"key\" value=\"Avain t&auml;h&auml;n\">
+	<input type=\"submit\" value=\"lis&auml;&auml; uusi\">
+</form>";
+
+
+echo "Tulostaakseesi bibtex-muodossa sy&ouml;t&auml; tiedoston nimi </br>";
+echo "<form action=\"operoi.php\" method=\"post\">
+	<input type=\"hidden\" name=\"tyyppi\" value=\"tulosta\">
+	tiedoston nimi: <input type =\"text\" name=\"filename\" value=\"Tiedoston nimi\"></br>
+	<input type=\"submit\" value=\"tulosta bibtex\">
+	</form>";
 
 echo "</body>";
 
