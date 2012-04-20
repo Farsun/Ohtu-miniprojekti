@@ -8,8 +8,19 @@
  Avain <input type=\"text\" name=\"key\" value=\"avain\"></br>
  Viitten nimi <input type =\"text\" name = \"name\" value = \"viitteen nimi\"/></br>
  Tekij&auml; <input type =\"text\" name = \"author\" value = \"tekija\"/></br>
- Vuosi <input type = \"text\" name = \"year\" value = \"vuosi\"/></br>
-<input type = \"submit\" value = \"lis&auml;&auml; mut!\"/>
+ Vuosi <input type = \"text\" name = \"year\" value = \"vuosi\"/></br>";
+echo "<br/>";
+
+echo "<input type =\"text\" name =\"publisher\" value=\"publisher\"><br/>";
+echo "<input type =\"text\" name =\"pages\" value=\"pages\"><br/>";
+echo "<input type =\"text\" name =\"volume\" value=\"volume\"><br/>";
+echo "<input type =\"text\" name =\"isbn\" value=\"isbn\"><br/>";
+echo "<input type =\"text\" name =\"booktitle\" value=\"book title\"><br/>";
+echo "<input type =\"text\" name =\"number\" value=\"number\"><br/>";
+echo "<input type=\"text\" name=\"address\" value=\"address\"><br/>";
+echo "<input type=\"text\" name=\"journal\" value=\"journal\"><br/>";
+
+echo "<input type = \"submit\" value = \"lis&auml;&auml; mut!\"/>
  
  
 </form>

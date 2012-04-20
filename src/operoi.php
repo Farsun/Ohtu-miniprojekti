@@ -32,8 +32,18 @@ echo "$filename";
 
 while ($row = pg_fetch_row($result))
 {
+	$result2 = pg_query($conn, "SELECT * from lisatieto WHERE owner = $row[0]");
+	$extradata = array();
+	echo "  stuff done  ";
+
+	while ($row2 = pg_fetch_row($result2))
+	{
+	  echo "$row[2]";
+	   $extradata[$row2[1]] = $row2[2];
+	  echo "$row[2]";
+	}
 	echo "moi</br>";
-	printtex($_POST["filename"], $row);
+	printtex($_POST["filename"], $row, $extradata);
 }
 
 
@@ -61,22 +71,33 @@ fclose($file);
 }*/
 
 
-function printtex($name, $data)
+function printtex($name, $data, $extradata)
 {
 
 //print data to file
 $file = fopen($name,'a') or die ("Failed");
-echo "$data";
-$arraynames = array_keys($data);
+
+
 $temp1="type";
 $temp2="key";
-fputs($file,"$arraynames[$temp1]{
-$arraynames[$temp2],");
-for ($i=1;$i<count($data)-2;$i++)
+fputs($file,"$data[5]{ $data[4],\n");
+fputs($file,"author: $data[1],\n");
+fputs($file,"title: $data[3],\n");
+fputs($file,"year: $data[2],\n");
+
+foreach($extradata as $a => $v)
 {
-  fputs($file,"$arraynames[$i]: $data[$i],");
+if ($v=="")
+{}
+else
+{
+fputs($file,"$a: $v,\n");
 }
-fputs($file,"}");
+}
+
+
+
+fputs($file,"}\n\n");
 fclose($file);
 
 }
@@ -91,12 +112,29 @@ echo "Hello?";
 echo "asd $dbdata asr";
 $conn = pg_connect($dbdata);
 $arraynames = array_keys($_POST);
-$query = pg_query_params($conn, "INSERT INTO viite (type,key,name,author,year) VALUES ($1,$2,$3,$4,$5)", array($_POST["type"],$_POST["key"],$_POST["name"],$_POST["author"],$_POST["year"]));
-for ($i=5;$i<count($data);$i++)
-{
-$query = pg_query_params($conn, "INSERT INTO lisatieto (type, data) VALUES ($1,$2)", array($arraynames[i],$_POST[i]));
-}
+echo "$arraynames[0]";
+echo "$arraynames[3]";
 
+$query = pg_query_params($conn, "INSERT INTO viite (type,key,name,author,year) VALUES ($1,$2,$3,$4,$5)", array($_POST["type"],$_POST["key"],$_POST["name"],$_POST["author"],$_POST["year"]));
+
+echo "Ollaan tässä<br/>";
+if (count($_POST)>5)
+{
+  for ($i=6;$i<count($data);$i++)
+  {
+  echo "$i";
+  echo " $arraynames[$i] spörölöö  </br>";
+  $as = pg_query($conn, "SELECT MAX(id) FROM viite"); 
+  $id = pg_fetch_row($as);
+
+  
+  if ($_POST[$arraynames[$i]]==""){}
+  else
+  {
+  $query2 = pg_query_params($conn, "INSERT INTO lisatieto (type, data, owner) VALUES ($1,$2,$3)", array($arraynames[$i],$_POST[$arraynames[$i]],$id[0]));
+  }
+  }
+}
 }
 
 
