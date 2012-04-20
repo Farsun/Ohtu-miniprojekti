@@ -85,10 +85,10 @@ $file = fopen($name,'a') or die ("Failed");
 
 $temp1="type";
 $temp2="key";
-fputs($file,"$data[5]\{ $data[4],\n");
-fputs($file,"\{author: $data[1]\},\n");
-fputs($file,"\{title: $data[3]\},\n");
-fputs($file,"\{year: $data[2]\},\n");
+fputs($file,"$data[5]{ $data[4],\n");
+fputs($file,"author = {$data[1]},\n");
+fputs($file,"title = {$data[3]},\n");
+fputs($file,"year = {$data[2]},\n");
 
 foreach($extradata as $a => $v)
 {
@@ -96,7 +96,7 @@ if ($v=="")
 {}
 else
 {
-fputs($file,"\{$a: $v\},\n");
+fputs($file,"$a = {$v},\n");
 }
 }
 
