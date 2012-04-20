@@ -82,13 +82,14 @@ function printtex($name, $data, $extradata)
 
 $file = fopen($name,'a') or die ("Failed");
 
-
+$c="{";
+$b="}";
 $temp1="type";
 $temp2="key";
-fputs($file,"$data[5]{ $data[4],\n");
-fputs($file,"author = {$data[1]},\n");
-fputs($file,"title = {$data[3]},\n");
-fputs($file,"year = {$data[2]},\n");
+fputs($file,"$data[5]$c $data[4],\n");
+fputs($file,"author = $c$data[1]$b,\n");
+fputs($file,"title = $c$data[3]$b,\n");
+fputs($file,"year = $c$data[2]$b,\n");
 
 foreach($extradata as $a => $v)
 {
@@ -96,13 +97,14 @@ if ($v=="")
 {}
 else
 {
-fputs($file,"$a = {$v},\n");
+fputs($file,"$a = $c$v$b,\n");
+
 }
 }
 
 
 
-fputs($file,"}\n\n");
+fputs($file,"$b\n\n");
 fclose($file);
 
 }
