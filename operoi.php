@@ -68,13 +68,15 @@ function printtex($name, $data)
 $file = fopen($name,'a') or die ("Failed");
 echo "$data";
 $arraynames = array_keys($data);
-fputs($arraynames[viitetype]);
-fputs($arraynames[key]);
-for ($i=3;$i<count($data);$i++)
+$temp1="type";
+$temp2="key";
+fputs($file,"$arraynames[$temp1]{
+$arraynames[$temp2],");
+for ($i=1;$i<count($data)-2;$i++)
 {
-  fputs($arraynames[i]$data[i]);
+  fputs($file,"$arraynames[$i]: $data[$i],");
 }
-fputs('}');
+fputs($file,"}");
 fclose($file);
 
 }
