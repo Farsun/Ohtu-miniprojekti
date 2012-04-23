@@ -1,5 +1,5 @@
 <?php
-include_once "../src/viite.php";
+include_once "./src/viite.php";
 class ViiteTest extends PHPUnit_Framework_TestCase
 {
 	//some test data
