@@ -9,6 +9,9 @@ echo "<html><head><title>Operoi</title></head><body>";
 if ($_POST["tyyppi"]=="lisaa")
 {
 echo "lisays<br/>";
+$viite = new Viite();
+//toteutetaan t�hän lisääysysashajöasjöglsmgknlössgmibgoköø
+jdföl
 insert($_POST);
 }
 
@@ -40,7 +43,7 @@ $result = pg_query($conn, "SELECT * FROM viite");
 
 
 
-while ($row = pg_fetch_row($result))
+while ($row = pg_fetch_array($result))
 {
 	$result2 = pg_query($conn, "SELECT * from lisatieto WHERE owner = $row[0]");
 	$extradata = array();
