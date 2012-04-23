@@ -1,7 +1,7 @@
 <?php
 include ("../src/operoi.php");
 //include ("../src/viite.php");
-class ViiteTest extends PHPUnit_Framework_TestCase
+class OperoiTest extends PHPUnit_Framework_TestCase
 {
 	//some test data
 	public $a = array("id"=>"1337","author"=>"ville", "year"=>"2000", "name"=>"testi","key"=>"VI20", "type"=>"@inproceedings");
