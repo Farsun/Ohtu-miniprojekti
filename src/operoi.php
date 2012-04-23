@@ -10,8 +10,7 @@ if ($_POST["tyyppi"]=="lisaa")
 {
 echo "lisays<br/>";
 $viite = new Viite();
-//toteutetaan t�hän lisääysysashajöasjöglsmgknlössgmibgoköø
-jdföl
+//toteutetaan t�hän lisääysysashajöasjöglsmgknlössgmibgoköø
 insert($_POST);
 }
 
