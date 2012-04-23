@@ -10,8 +10,8 @@ class ViiteTest extends PHPUnit_Framework_TestCase
 	public $viite;
 
 	public function testLueData(){
-                $viite = new Viite();
-		$viite->lueDatat($a,$b,$c);
+                $this->viite = new Viite();
+		$this->viite->lueDatat($this->a,$this->b,$this->c);
 	}
 
         /** @depends testLueData  */
