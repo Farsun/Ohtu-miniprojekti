@@ -1,5 +1,5 @@
 <?php
-include ("../src/operoi.php");
+include "..:/src/operoi.php";
 //include ("../src/viite.php");
 class OperoiTest extends PHPUnit_Framework_TestCase
 {
