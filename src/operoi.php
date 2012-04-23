@@ -123,7 +123,6 @@ $temp="$temp".""."$a = $c$v$b,\n";
 
 //fputs($file,"$b\n\n");
 $temp="$temp".""."$b\n\n";
-echo "$temp";
 fputs ($file,"$temp");
 fclose($file);
 return $temp;
