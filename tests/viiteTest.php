@@ -1,4 +1,5 @@
 <?php
+include ('../src/viite.php');
 class ViiteTest extends PHPUnit_Framework_TestCase
 {
 	//some test data
@@ -6,24 +7,28 @@ class ViiteTest extends PHPUnit_Framework_TestCase
 	public $b = array(array("sivut","1-3"), array("volume","4"));
 	public $c = array("ville", "testi");
 
-	public $viite = new Viite();
+	public $viite;
 
 	public function testLueData(){
+                $viite = new Viite();
 		$viite->lueDatat($a,$b,$c);
 	}
 
-	public function testGetTiedot(){
-		$tiedot = $this->$a;
+        /** @depends testLueData  */
+	public function testGetTiedot(Viite $viite){
+		$tiedot = $this->a;
 		$this->assertEquals($this->a, $this->viite->getTiedot());
 	}
 
-	public function testGetLisatiedot(){
-		$lisatiedot = $this->$b;
+        /** @depends testLueData  */
+	public function testGetLisatiedot(Viite $viite){
+		$lisatiedot = $this->b;
 		$this->assertEquals($this->b, $this->viite->getLisatiedot());
 	}
 
-	public function testGetTagit(){
-		$tagit = $this->$c;
+        /** @depends testLueData  */
+	public function testGetTagit(Viite $viite){
+		$tagit = $this->c;
 		$this->assertEquals($this->c, $this->viite->getTagit());
 	}
 }
