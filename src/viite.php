@@ -13,7 +13,7 @@ class Viite
 	public function lueDatat($tieto, $lisatieto, $tag){
 	//all parameters should be arrays!
 	$this->tiedot = $tieto;
-	$this->this->lisatiedot = $lisatieto;
+	$this->lisatiedot = $lisatieto;
 	$this->tagit = $tag;
 	}
 
