@@ -38,7 +38,7 @@ while  ($row = pg_fetch_row($result))
 
 
 echo "<form action=\"lisaa.php\" method=\"post\">
-	<input type=\"radio\" name=\"viitetype\" value = \"@inproceeding\" checked />Inproceeding
+	<input type=\"radio\" name=\"viitetype\" value = \"@inproceedings\" checked />Inproceedings
 	<input type=\"radio\" name =\"viitetype\" value=\"@book\"/>Book
 	<input type=\"radio\" name=\"viitetype\" value=\"@article\"/>Article
 	<input type=\"submit\" value=\"lis&auml;&auml; uusi\"/>

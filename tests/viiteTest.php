@@ -1,4 +1,5 @@
 <?php
+include_once ("../src/viite.php");
 class ViiteTest extends PHPUnit_Framework_TestCase
 {
 	//some test data
@@ -6,25 +7,27 @@ class ViiteTest extends PHPUnit_Framework_TestCase
 	public $b = array(array("sivut","1-3"), array("volume","4"));
 	public $c = array("ville", "testi");
 
-	public $viite = new Viite();
+	public $viite;
 
 	public function testLueData(){
-		$viite->lueDatat($a,$b,$c);
+                $this->viite = new Viite();
+		$this->viite->lueDatat($this->a,$this->b,$this->c);
+                return $this->viite;
 	}
 
-	public function testGetTiedot(){
-		$tiedot = $this->$a;
-		$this->assertEquals($this->a, $this->viite->getTiedot());
+        /** @depends testLueData  */
+	public function testGetTiedot(Viite $viite){
+		$this->assertEquals($this->a, $viite->getTiedot());
 	}
 
-	public function testGetLisatiedot(){
-		$lisatiedot = $this->$b;
-		$this->assertEquals($this->b, $this->viite->getLisatiedot());
+        /** @depends testLueData  */
+	public function testGetLisatiedot(Viite $viite){
+		$this->assertEquals($this->b, $viite->getLisatiedot());
 	}
 
-	public function testGetTagit(){
-		$tagit = $this->$c;
-		$this->assertEquals($this->c, $this->viite->getTagit());
+        /** @depends testLueData  */
+	public function testGetTagit(Viite $viite){
+		$this->assertEquals($this->c, $viite->getTagit());
 	}
 }
 ?>

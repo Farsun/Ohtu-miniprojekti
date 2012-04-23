@@ -1,0 +1,14 @@
+@inproceeding{ avain,
+author: tekija,
+title: viitteen nimi,
+year: vuosi,
+publisher: publisher,
+pages: pages,
+volume: volume,
+isbn: isbn,
+booktitle: book title,
+number: number,
+address: address,
+journal: journal,
+}
+
