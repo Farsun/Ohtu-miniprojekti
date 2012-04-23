@@ -17,20 +17,17 @@ class ViiteTest extends PHPUnit_Framework_TestCase
 
         /** @depends testLueData  */
 	public function testGetTiedot(Viite $viite){
-		$tiedot = $this->a;
-		$this->assertEquals($this->a, $this->viite->getTiedot());
+		$this->assertEquals($this->a, $viite->getTiedot());
 	}
 
         /** @depends testLueData  */
 	public function testGetLisatiedot(Viite $viite){
-		$lisatiedot = $this->b;
-		$this->assertEquals($this->b, $this->viite->getLisatiedot());
+		$this->assertEquals($this->b, $viite->getLisatiedot());
 	}
 
         /** @depends testLueData  */
 	public function testGetTagit(Viite $viite){
-		$tagit = $this->c;
-		$this->assertEquals($this->c, $this->viite->getTagit());
+		$this->assertEquals($this->c, $viite->getTagit());
 	}
 }
 ?>
