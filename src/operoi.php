@@ -3,10 +3,12 @@
  *  File operoi.php
  *  tietokantaoperaatiot
  *
+ *  PHP version 5.3.10
+ *
  *  @category Logic
  *  @package  Src
- *  @author   LateBloomers
- *  @license  http://sam.zoy.org/wtfpl/
+ *  @author   LateBloomers <sampo.laurila@helsinki.fi>
+ *  @license  http://sam.zoy.org/wtfpl/ DWYFW
  *  @link     https://github.com/Farsun/Ohtu-miniprojekti
 */
 
