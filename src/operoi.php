@@ -87,12 +87,13 @@ fclose($file);
 }*/
 
 /**
-* Tulostaa  bibtex-muotoisen tiedoston tietokannassa olevista viitteistä
-*
-* @param  String $name      tulostetidoston nimi
-* @param  array  $data      dataa
-* @param  array  $extradata lisädataa
-* @return file   $temp      palautustiedosto
+ * Tulostaa  bibtex-muotoisen tiedoston tietokannassa olevista viitteistä
+ *
+ * @param String $name      tulostetidoston nimi
+ * @param array  $data      dataa
+ * @param array  $extradata lisädataa
+ *
+ * @return file $temp palautustiedosto
 */
 function printtex($name, $data, $extradata) 
 {
@@ -136,10 +137,11 @@ function printtex($name, $data, $extradata)
 }
 
 /**
-* Lisää viitteen tietokantaan
-*
-* @param  Viite $viite lisättävä 
-* @return int   $id    lisätyn viitteen tietokantaid
+ * Lisää viitteen tietokantaan
+ *
+ * @param Viite $viite lisättävä
+ * 
+ * @return int   $id    lisätyn viitteen tietokantaid
 */
 function insert(Viite $viite)
 {
@@ -152,7 +154,7 @@ function insert(Viite $viite)
     $arraynames = array_keys($extradata);
 
     $query = pg_query_params($conn, "INSERT INTO viite (type,key,name,author,year) VALUES ($1,$2,$3,$4,$5)", array($data["type"],$data["key"],$data["name"],$data["author"],$data["year"])) or die ('AYAYAYAYAYAYYAA!');
-    $id=pg_fetch_row(pg_query($conn,"SELECT MAX (id) FROM viite"));
+    $id=pg_fetch_row(pg_query($conn, "SELECT MAX (id) FROM viite"));
     if (count($extradata)>=0) {
         $as = pg_query($conn, "SELECT MAX(id) FROM viite"); 
         $id = pg_fetch_row($as);
@@ -167,13 +169,15 @@ function insert(Viite $viite)
 * Poistaa idtä vastaavaan viitteen taulukosta
 *
 * @param int $id poistettava id
+*
 * @return int $id poistettu id
 */
-function remove($id) {
+function remove($id)
+{
     $dbdata = "host=localhost dbname=ohtu user=ohtu password=ohtuproju";
 
     $conn = pg_connect($dbdata);
-    $query = pg_query_params($conn, "DELETE FROM lisatieto WHERE owner=$1",array($id));
+    $query = pg_query_params($conn, "DELETE FROM lisatieto WHERE owner=$1", array($id));
     $query = pg_query_params($conn, "DELETE FROM viite WHERE id =$1", array($id));
     return $id;
 }
