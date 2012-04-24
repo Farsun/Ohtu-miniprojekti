@@ -10,6 +10,19 @@ if ($_POST["tyyppi"]=="lisaa")
 {
 echo "lisays<br/>";
 $viite = new Viite();
+$tiedot = array("author"=>$_POST["author"], "year"=>$_POST["year"], "name"=>$_POST["name"],"key"=>$_POST["key"], "type"=>$_POST["type"]);
+$lisatiedot = array();
+foreach($_POST as $k => $v){
+	if($_POST[$k]==""){}
+	else{
+		if($k=="author" || $k== "year" || $k== "name" || $k== "key" || $k== "type" ){}
+		else{
+			$lisatiedot[$k] = $v;
+		}
+	}
+	
+}
+$viite->lueDatat($tiedot, $lisatiedot, 0);
 //toteutetaan t�hän lisääysysashajöasjöglsmgknlössgmibgoköø
 insert($_POST);
 }
