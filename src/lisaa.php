@@ -1,4 +1,8 @@
  <?php
+ /**
+ * Tulostaa kentät viitteen tiedoille, joihin käyttäjä täyttää tiedot.
+ * Antaa tiedot eteenpäin operoi.php:lle, joka hoitaa logiikan
+ */
  
  echo "<html><head></head><body>";
  $viitetype = $_POST["viitetype"];
