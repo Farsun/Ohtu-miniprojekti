@@ -1,13 +1,13 @@
 <?php
 /**
-*  File operoi.php
-*  tietokantaoperaatiot
-*
-*  @category Logic
-*  @package Src
-*  @author Display LateBloomers
-*  @license http://sam.zoy.org/wtfpl/
-*  @link operoi
+ *  File operoi.php
+ *  tietokantaoperaatiot
+ *
+ *  @category Logic
+ *  @package  Src
+ *  @author   LateBloomers
+ *  @license  http://sam.zoy.org/wtfpl/
+ *  @link     https://github.com/Farsun/Ohtu-miniprojekti
 */
 
 require_once "viite.php";
