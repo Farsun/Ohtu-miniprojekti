@@ -1,4 +1,15 @@
 <?php
+/**
+* File operoi.php
+*/
+/**
+* 
+* @author LateBloomers
+* @package src
+* @link operoi
+* @license http://sam.zoy.org/wtfpl/
+* @category Logic
+*/
 
 include_once "viite.php";
 
@@ -74,93 +85,87 @@ $dbdata = fgets($file);
 fclose($file);
 }*/
 
-
-function printtex($name, $data, $extradata)
-{
-
-//print data to file
-
-$file = fopen($name,'a') or die ("Failed");
-
-$temp ="";
-
-$c="{";
-$b="}";
-$temp1="type";
-$temp2="key";
-/*fputs($file,"$data[5]$c $data[4],\n");
-fputs($file,"author = $c$data[1]$b,\n");
-fputs($file,"title = $c$data[3]$b,\n");
-fputs($file,"year = $c$data[2]$b,\n");
+/**
+* Tulostaa  bibtex-muotoisen tiedoston tietokannassa olevista viitteistä
+* @param String $name tulostetidoston nimi
+* @param array $data dataa
+* @param array $extradata lisädataa 
 */
-$names = "type";
-$names2 = "key";
-$temp="$temp".""."$data[$names]$c $data[$names2],\n";
-$names="author";
-$temp="$temp".""."author = $c$data[$names]$b,\n";
-$names="name";
-$temp="$temp".""."title = $c$data[$names]$b,\n";
-$names="year";
-$temp="$temp".""."year = $c$data[$names]$b,\n";
+function printtex($name, $data, $extradata) {
 
-foreach($extradata as $a => $v)
-{
-if ($v=="")
-{}
-else
-{
-//fputs($file,"$a = $c$v$b,\n");
-$temp="$temp".""."$a = $c$v$b,\n";
+    $file = fopen($name,'a') or die ("Failed");
 
-}
-}
+    $temp ="";
 
+    $c="{";
+    $b="}";
+    $temp1="type";
+    $temp2="key";
+    /*fputs($file,"$data[5]$c $data[4],\n");
+    fputs($file,"author = $c$data[1]$b,\n");
+    fputs($file,"title = $c$data[3]$b,\n");
+    fputs($file,"year = $c$data[2]$b,\n");
+    */
+    $names = "type";
+    $names2 = "key";
+    $temp="$temp".""."$data[$names]$c $data[$names2],\n";
+    $names="author";
+    $temp="$temp".""."author = $c$data[$names]$b,\n";
+    $names="name";
+    $temp="$temp".""."title = $c$data[$names]$b,\n";
+    $names="year";
+    $temp="$temp".""."year = $c$data[$names]$b,\n";
 
+    foreach ($extradata as $a => $v) {
+        if ($v=="") {
+        } else {
+            //fputs($file,"$a = $c$v$b,\n");
+            $temp="$temp".""."$a = $c$v$b,\n";
+        }
+    }
 
-//fputs($file,"$b\n\n");
-$temp="$temp".""."$b\n\n";
-fputs ($file,"$temp");
-fclose($file);
-return $temp;
-
-}
-
-function insert(Viite $viite)
-{
- $dbdata = "host=localhost dbname=ohtu user=ohtu password=ohtuproju";
-
-$data = $viite->getTiedot();
-$extradata = $viite->getLisaTiedot();
-
-
-
-$conn = pg_connect($dbdata) or die ('AYAYAYAYAYYAAAAYAYAYAAA!!');
-$arraynames = array_keys($extradata);
-
-$query = pg_query_params($conn, "INSERT INTO viite (type,key,name,author,year) VALUES ($1,$2,$3,$4,$5)", array($data["type"],$data["key"],$data["name"],$data["author"],$data["year"])) or die ('AYAYAYAYAYAYYAA!');
-$id=pg_fetch_row(pg_query($conn,"SELECT MAX (id) FROM viite"));
-if (count($extradata)>=0)
-{
-  $as = pg_query($conn, "SELECT MAX(id) FROM viite"); 
-  $id = pg_fetch_row($as);
-  foreach($extradata as $key => $value)
-  {
-  
-  $query2 = pg_query_params($conn, "INSERT INTO lisatieto (type, data, owner) VALUES ($1,$2,$3)", array($key,$value,$id[0]));
-  
-  }
-}
-return $id;
+    //fputs($file,"$b\n\n");
+    $temp="$temp".""."$b\n\n";
+    fputs ($file,"$temp");
+    fclose($file);
+    return $temp;
 }
 
+/**
+* Lisää viitteen tietokantaan
+* @param Viite $viite lisättävä 
+*/
+function insert(Viite $viite) {
+    $dbdata = "host=localhost dbname=ohtu user=ohtu password=ohtuproju";
 
-function remove($id)
-{
- $dbdata = "host=localhost dbname=ohtu user=ohtu password=ohtuproju";
+    $data = $viite->getTiedot();
+    $extradata = $viite->getLisaTiedot();
 
-$conn = pg_connect($dbdata);
-$query = pg_query_params($conn, "DELETE FROM lisatieto WHERE owner=$1",array($id));
-$query = pg_query_params($conn, "DELETE FROM viite WHERE id =$1", array($id));
-return $id;
+    $conn = pg_connect($dbdata) or die ('AYAYAYAYAYYAAAAYAYAYAAA!!');
+    $arraynames = array_keys($extradata);
+
+    $query = pg_query_params($conn, "INSERT INTO viite (type,key,name,author,year) VALUES ($1,$2,$3,$4,$5)", array($data["type"],$data["key"],$data["name"],$data["author"],$data["year"])) or die ('AYAYAYAYAYAYYAA!');
+    $id=pg_fetch_row(pg_query($conn,"SELECT MAX (id) FROM viite"));
+    if (count($extradata)>=0) {
+        $as = pg_query($conn, "SELECT MAX(id) FROM viite"); 
+        $id = pg_fetch_row($as);
+        foreach ($extradata as $key => $value) {
+            $query2 = pg_query_params($conn, "INSERT INTO lisatieto (type, data, owner) VALUES ($1,$2,$3)", array($key,$value,$id[0]));
+        }
+    }
+    return $id;
+}
+
+/**
+* Poistaa idtä vastaavaan viitteen taulukosta
+* @param int $id poistettava id
+*/
+function remove($id) {
+    $dbdata = "host=localhost dbname=ohtu user=ohtu password=ohtuproju";
+
+    $conn = pg_connect($dbdata);
+    $query = pg_query_params($conn, "DELETE FROM lisatieto WHERE owner=$1",array($id));
+    $query = pg_query_params($conn, "DELETE FROM viite WHERE id =$1", array($id));
+    return $id;
 }
 ?>
