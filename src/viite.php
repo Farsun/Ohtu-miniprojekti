@@ -14,14 +14,6 @@ class Viite
 {
     private $_tiedot = array();
     private $_lisatiedot = array();
-    private $_tagit = array();<?php
-/**
-* Sisältää viitteen tiedot, sekä funktiot niiden käsittelyyn.
-*/
-class Viite
-{
-    private $_tiedot = array();
-    private $_lisatiedot = array();
     private $_tagit = array();
 
     /**
