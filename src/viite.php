@@ -10,6 +10,10 @@ class Viite
 
     /**
     * Lukee 3 taulukkoa viitteen tiedoiksi.
+    * @param $tieto viitteen perustiedot
+    * @param $lisatieto viitteen lisätiedot
+    * @param $tag viitteen tagit
+    * @return standardi palautusarvo
     */
     public function lueDatat($tieto, $lisatieto, $tag)
     {
@@ -21,6 +25,7 @@ class Viite
 
     /**
     * Palauttaa viitteen perustiedot.
+    * @return palauttaa $_tieto taulukon; viitteen perustiedot
     */
     public function getTiedot()
     {
@@ -29,6 +34,7 @@ class Viite
 
     /**
     * Palauttaa viitteen lisätiedot.
+    * @return palauttaa $_lisatieto taulukon; viitteen lisätiedot
     */
     public function getLisatiedot()
     {
@@ -37,6 +43,7 @@ class Viite
 
     /**
     * Palauttaa viitteen tagit.
+    * @return palauttaa $_tagit taulukon; viitteen tagit
     */
     public function getTagit()
     {
