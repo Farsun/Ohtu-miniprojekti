@@ -150,7 +150,7 @@ if (count($extradata)>=0)
   foreach($extradata as $key => $value)
   {
   
-  $query2 = pg_query_params($conn, "INSERT INTO lisatieto (type, data, owner) VALUES ($1,$2,$3)", $key,$value,$id[0]));
+  $query2 = pg_query_params($conn, "INSERT INTO lisatieto (type, data, owner) VALUES ($1,$2,$3)", array($key,$value,$id[0]));
   
   }
 }
