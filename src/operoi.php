@@ -3,12 +3,13 @@
 * File operoi.php
 */
 /**
-* 
-* @author LateBloomers
-* @package src
-* @link operoi
-* @license http://sam.zoy.org/wtfpl/
-* @category Logic
+* tietokantaoperaatiot
+*
+*  @category Logic
+*  @package Src
+*  @author Display LateBloomers
+*  @license http://sam.zoy.org/wtfpl/
+*  @link operoi
 */
 
 include_once "viite.php";
