@@ -4,9 +4,10 @@ include_once "./src/operoi.php";
 class OperoiTest extends PHPUnit_Framework_TestCase
 {
 	//some test data
-	public $a = array("id"=>"1337","author"=>"ville", "year"=>"2000", "name"=>"testi","key"=>"VI20", "type"=>"@inproceedings");
 	public $b = array("pages"=>"1-3","volume"=>"4");
+	public $a = array("id"=>"1337","author"=>"ville", "year"=>"2000", "name"=>"testi","key"=>"VI20", "type"=>"@inproceedings");
 	public $c = array("ville", "testi");
+	public $tempa = array("author"=>"ville", "year"=>"2000", "name"=>"testi","key"=>"VI20", "type"=>"@inproceedings");
 	public $d =0;
 
 	public $temp = "@inproceedings{ VI20,\nauthor = {ville},\ntitle = {testi},\nyear = {2000},\npages = {1-3},\nvolume = {4},\n}\n\n";
@@ -30,6 +31,16 @@ class OperoiTest extends PHPUnit_Framework_TestCase
 		$d=insert($viite);
 		$this->assertNotNull($d);
 		$this->assertGreaterThan(0,$d);
+	}
+
+	/** @depends testInsert */
+	public function testGetOne($id){
+		$temp = getOne($id);
+		$temp3 = array();
+		
+		$this->assertEquals($tempa, $temp->getTiedot());
+		$this->assertEquals($b, $temp->getLisatiedot());
+		$this->assertEquals($temp3, $temp->getTagit());
 	}
 
       /** @depends testInsert  */

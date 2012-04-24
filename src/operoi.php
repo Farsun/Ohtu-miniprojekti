@@ -166,6 +166,43 @@ function insert(Viite $viite)
 }
 
 /**
+* Hakee tiedot yksittäisestä osasta.
+*
+* @param int $id haettava id
+*
+* @return Viite $viite haettava viite
+*
+*
+*/
+function getOne($id)
+{
+$dbdata = "host=localhost dbname=ohtu user=ohtu password=ohtuproju";
+$conn = pg_connect($dbdata);
+$query = pg_query_params($conn, "SELECT * FROM viite WHERE id =$1", array($id));
+$data=pg_fetch_array($query);
+$query = pg_query_params($conn, "SELECT * FROM lisatiedot WHERE owner =$1 AND type NOT tag", array($id));
+$extradata=array();
+while ($data = pg_fetch_row($query))
+{
+  $extradata[$data[1]]=$data[2];
+}
+$query = pg_query($conn, "SELECT * FROM lisatiedot WHERE type = tag");
+$tags=array();
+$i=0;
+while ($data = pg_fetch_row($query))
+{
+  $tags[$i]=$data;
+  $i++;
+}
+$v = new Viite();
+$v->lueDatat($data, $extradata, $tags);
+
+return $v;
+}
+
+
+
+/**
 * Poistaa idtä vastaavaan viitteen taulukosta
 *
 * @param int $id poistettava id
