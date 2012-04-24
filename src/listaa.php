@@ -20,7 +20,7 @@ if (!$conn) {
 
 $result = pg_query($conn, $query);
 
-while($row = pg_fetch_row($result)) {
+while ($row = pg_fetch_row($result)) {
     for ($i = 1; $i< count($row);$i++) {
         echo "$row[$i], ";
     }
