@@ -1,5 +1,8 @@
 <?php
-
+/**
+* Pääsivu, listaa yksinkertaistetut tiedot kaikista viitteistä
+* linkit uusien viitteiden lisäämiseen ja bibtex tulostukseen.
+*/
 echo "<html>
 <head>
 <title>Listaus</title> 
@@ -11,14 +14,14 @@ $query = "SELECT * FROM viite";
 $dbdata="host=localhost dbname=ohtu user=ohtu password=ohtuproju";
 
 $conn = pg_connect($dbdata);
-if (!$conn){
+if (!$conn) {
     echo "something failed!";
 }
 
 $result = pg_query($conn, $query);
 
-while($row = pg_fetch_row($result)){
-    for ($i = 1; $i< count($row);$i++){
+while($row = pg_fetch_row($result)) {
+    for ($i = 1; $i< count($row);$i++) {
         echo "$row[$i], ";
     }
 
