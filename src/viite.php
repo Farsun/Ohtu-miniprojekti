@@ -7,7 +7,7 @@
 *
 *   @category Logic
 *   @package Src
-*   @author Farsun <ville.kukkola@helsinki.fi>
+*   @author Farsun
 *   @license http://sam.zoy.org/wtfpl/ DWTFYWT license
 *   @link Viite
 */
