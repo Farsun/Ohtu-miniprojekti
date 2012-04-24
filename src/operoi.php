@@ -145,17 +145,13 @@ $query = pg_query_params($conn, "INSERT INTO viite (type,key,name,author,year) V
 $id=pg_fetch_row(pg_query($conn,"SELECT MAX (id) FROM viite"));
 if (count($extradata)>=0)
 {
-  for ($i=0;$i<count($extradata);$i++)
-  {
   $as = pg_query($conn, "SELECT MAX(id) FROM viite"); 
   $id = pg_fetch_row($as);
-
-  
-  if ($_POST[$arraynames[$i]]==""){}
-  else
+  foreach($extradata as $key => $value)
   {
-  $query2 = pg_query_params($conn, "INSERT INTO lisatieto (type, data, owner) VALUES ($1,$2,$3)", array($arraynames[$i],$extradata[$arraynames[$i]],$id[0]));
-  }
+  
+  $query2 = pg_query_params($conn, "INSERT INTO lisatieto (type, data, owner) VALUES ($1,$2,$3)", $key,$value,$id[0]));
+  
   }
 }
 return $id;
