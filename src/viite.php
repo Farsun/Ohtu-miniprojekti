@@ -1,15 +1,13 @@
 <?php
 /**
-* File viite.php
-*/
-/**
-* Sisältää viitteen tiedot, sekä funktiot niiden käsittelyyn.
-*
-*   @category Logic
-*   @package Src
-*   @author Farsun
-*   @license http://sam.zoy.org/wtfpl/ DWTFYWT license
-*   @link Viite
+ * File viite.php
+ * Sisältää viitteen tiedot, sekä funktiot niiden käsittelyyn.
+ *
+ * @category Logic
+ * @package  Src
+ * @author   Farsun
+ * @license  http://sam.zoy.org/wtfpl/ DWTFYWT license
+ * @link     https://github.com/Farsun/Ohtu-miniprojekti
 */
 class Viite
 {
@@ -36,7 +34,7 @@ class Viite
 
     /**
     * Palauttaa viitteen perustiedot.
-    * @return palauttaa $_tieto taulukon; viitteen perustiedot
+    * @return array $_tieto palauttaa tieto-taulukon; viitteen perustiedot
     */
     public function getTiedot()
     {
@@ -45,7 +43,7 @@ class Viite
 
     /**
     * Palauttaa viitteen lisätiedot.
-    * @return palauttaa $_lisatieto taulukon; viitteen lisätiedot
+    * @return array $_lisatieto palauttaa lisätiedot taulukosta; viitteen lisätiedot
     */
     public function getLisatiedot()
     {
@@ -54,7 +52,7 @@ class Viite
 
     /**
     * Palauttaa viitteen tagit.
-    * @return palauttaa $_tagit taulukon; viitteen tagit
+    * @return array $_tagit palauttaa tagit taulukosta; viitteen tagit
     */
     public function getTagit()
     {
