@@ -1,5 +1,21 @@
 <?php
 /**
+* File viite.php
+*/
+/**
+* Sisältää viitteen tiedot, sekä funktiot niiden käsittelyyn.
+* @author Farsun
+* @package src
+* @link Viite
+* @license http://sam.zoy.org/wtfpl/
+* @category logic
+*/
+class Viite
+{
+    private $_tiedot = array();
+    private $_lisatiedot = array();
+    private $_tagit = array();<?php
+/**
 * Sisältää viitteen tiedot, sekä funktiot niiden käsittelyyn.
 */
 class Viite
@@ -10,9 +26,11 @@ class Viite
 
     /**
     * Lukee 3 taulukkoa viitteen tiedoiksi.
-    * @param $tieto viitteen perustiedot
-    * @param $lisatieto viitteen lisätiedot
-    * @param $tag viitteen tagit
+    *
+    * @param array $tieto viitteen perustiedot
+    * @param array $lisatieto viitteen lisätiedot
+    * @param array $tag viitteen tagit
+    *
     * @return standardi palautusarvo
     */
     public function lueDatat($tieto, $lisatieto, $tag)
