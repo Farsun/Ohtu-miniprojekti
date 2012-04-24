@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 include ('../src/viite.php');
+=======
+include_once "./src/viite.php";
+>>>>>>> ab02ab1306f845f5dc3dfac7fef29b1f7e4ffce5
 class ViiteTest extends PHPUnit_Framework_TestCase
 {
 	//some test data
@@ -12,6 +16,10 @@ class ViiteTest extends PHPUnit_Framework_TestCase
 	public function testLueData(){
                 $this->viite = new Viite();
 		$this->viite->lueDatat($this->a,$this->b,$this->c);
+<<<<<<< HEAD
+=======
+		$this->assertNotNull($this->viite);
+>>>>>>> ab02ab1306f845f5dc3dfac7fef29b1f7e4ffce5
                 return $this->viite;
 	}
 

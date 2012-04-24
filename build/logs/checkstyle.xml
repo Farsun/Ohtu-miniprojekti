@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="1.3.3">
+ <file name="/var/lib/jenkins/workspace/latebloomers/src/hello.php">
+  <error line="6" column="5" severity="error" message="Short PHP opening tag used; expected &quot;&lt;?php&quot; but found &quot;&lt;?&quot;" source="Generic.PHP.DisallowShortOpenTag.Found"/>
+  <error line="6" column="7" severity="error" message="Missing file doc comment" source="PEAR.Commenting.FileComment.Missing"/>
+ </file>
+ <file name="/var/lib/jenkins/workspace/latebloomers/src/lisaa.php">
+  <error line="2" column="1" severity="error" message="Missing file doc comment" source="PEAR.Commenting.FileComment.Missing"/>
+ </file>
+ <file name="/var/lib/jenkins/workspace/latebloomers/src/listaa.php">
+  <error line="2" column="1" severity="error" message="Missing file doc comment" source="PEAR.Commenting.FileComment.Missing"/>
+  <error line="13" column="9" severity="error" message="Space before opening parenthesis of function call prohibited" source="PEAR.Functions.FunctionCallSignature.SpaceBeforeOpenBracket"/>
+  <error line="14" column="1" severity="error" message="Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n{\n&quot;" source="PEAR.ControlStructures.ControlSignature"/>
+  <error line="14" column="12" severity="error" message="There must be a single space between the closing parenthesis and the opening brace of a multi-line IF statement; found newline" source="PEAR.ControlStructures.MultiLineCondition.NewlineBeforeOpenBrace"/>
+  <error line="16" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="16" column="2" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="21" column="1" severity="error" message="Expected &quot;while (...) {\n&quot;; found &quot;while  (...)\n{\n&quot;" source="PEAR.ControlStructures.ControlSignature"/>
+  <error line="23" column="5" severity="error" message="Expected &quot;for (...) {\n&quot;; found &quot;for (...)\n\n&#9;{\n&quot;" source="PEAR.ControlStructures.ControlSignature"/>
+  <error line="25" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="26" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="26" column="3" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 2" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="27" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="27" column="2" severity="error" message="Closing brace indented incorrectly; expected 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeClosingBrace.Indent"/>
+  <error line="29" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="29" column="2" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="35" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="35" column="2" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="41" column="1" severity="warning" message="Line exceeds 85 characters; contains 90 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="51" column="1" severity="warning" message="Line exceeds 85 characters; contains 87 characters" source="Generic.Files.LineLength.TooLong"/>
+ </file>
+ <file name="/var/lib/jenkins/workspace/latebloomers/src/operoi.php">
+  <error line="2" column="1" severity="error" message="Missing file doc comment" source="PEAR.Commenting.FileComment.Missing"/>
+  <error line="7" column="1" severity="error" message="Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n{\n&quot;" source="PEAR.ControlStructures.ControlSignature"/>
+  <error line="7" column="31" severity="error" message="There must be a single space between the closing parenthesis and the opening brace of a multi-line IF statement; found newline" source="PEAR.ControlStructures.MultiLineCondition.NewlineBeforeOpenBrace"/>
+  <error line="9" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="10" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="13" column="1" severity="error" message="Expected &quot;} else if (...) {\n&quot;; found &quot;}\n\nelse if (...)\n{\n&quot;" source="PEAR.ControlStructures.ControlSignature"/>
+  <error line="13" column="6" severity="error" message="Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n{\n&quot;" source="PEAR.ControlStructures.ControlSignature"/>
+  <error line="13" column="37" severity="error" message="There must be a single space between the closing parenthesis and the opening brace of a multi-line IF statement; found newline" source="PEAR.ControlStructures.MultiLineCondition.NewlineBeforeOpenBrace"/>
+  <error line="15" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="16" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="19" column="1" severity="error" message="Expected &quot;} else if (...) {\n&quot;; found &quot;}\n\nelse if (...)\n{\n&quot;" source="PEAR.ControlStructures.ControlSignature"/>
+  <error line="19" column="6" severity="error" message="Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n{\n&quot;" source="PEAR.ControlStructures.ControlSignature"/>
+  <error line="19" column="38" severity="error" message="There must be a single space between the closing parenthesis and the opening brace of a multi-line IF statement; found newline" source="PEAR.ControlStructures.MultiLineCondition.NewlineBeforeOpenBrace"/>
+  <error line="21" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="23" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="24" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="26" column="1" severity="error" message="Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n{\n&quot;" source="PEAR.ControlStructures.ControlSignature"/>
+  <error line="26" column="1" severity="error" message="Line indented incorrectly; expected 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="26" column="28" severity="error" message="There must be a single space between the closing parenthesis and the opening brace of a multi-line IF statement; found newline" source="PEAR.ControlStructures.MultiLineCondition.NewlineBeforeOpenBrace"/>
+  <error line="28" column="3" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 2" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="30" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="30" column="9" severity="error" message="No space found after comma in function call" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma"/>
+  <error line="31" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="31" column="1" severity="error" message="Space before opening parenthesis of function call prohibited" source="PEAR.Functions.FunctionCallSignature.SpaceBeforeOpenBracket"/>
+  <error line="34" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="35" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="36" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="41" column="1" severity="error" message="Expected &quot;while (...) {\n&quot;; found &quot;while (...)\n{\n&quot;" source="PEAR.ControlStructures.ControlSignature"/>
+  <error line="41" column="1" severity="error" message="Line indented incorrectly; expected 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="43" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="43" column="2" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="44" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="44" column="2" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="46" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="46" column="2" severity="error" message="Expected &quot;while (...) {\n&quot;; found &quot;while (...)\n&#9;{\n&quot;" source="PEAR.ControlStructures.ControlSignature"/>
+  <error line="46" column="2" severity="error" message="Line indented incorrectly; expected 8 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="47" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="48" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="48" column="5" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 4" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="49" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="50" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="50" column="2" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="54" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="78" column="1" severity="error" message="You must use &quot;/**&quot; style comments for a function comment" source="PEAR.Commenting.FunctionComment.WrongStyle"/>
+  <error line="81" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="83" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="83" column="9" severity="error" message="No space found after comma in function call" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma"/>
+  <error line="85" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="86" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="87" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="88" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="89" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="89" column="1" severity="error" message="No space found after comma in function call" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma"/>
+  <error line="90" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="90" column="1" severity="error" message="No space found after comma in function call" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma"/>
+  <error line="91" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="91" column="1" severity="error" message="No space found after comma in function call" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma"/>
+  <error line="92" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="92" column="1" severity="error" message="No space found after comma in function call" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma"/>
+  <error line="94" column="1" severity="error" message="Expected &quot;foreach (...) {\n&quot;; found &quot;foreach(...)\n{\n&quot;" source="PEAR.ControlStructures.ControlSignature"/>
+  <error line="94" column="1" severity="error" message="Line indented incorrectly; expected 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="96" column="1" severity="error" message="Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n{&quot;" source="PEAR.ControlStructures.ControlSignature"/>
+  <error line="96" column="1" severity="error" message="Line indented incorrectly; expected 8 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="96" column="12" severity="error" message="There must be a single space between the closing parenthesis and the opening brace of a multi-line IF statement; found newline" source="PEAR.ControlStructures.MultiLineCondition.NewlineBeforeOpenBrace"/>
+  <error line="97" column="2" severity="error" message="Closing brace must be on a line by itself" source="PEAR.WhiteSpace.ScopeClosingBrace.Line"/>
+  <error line="98" column="1" severity="error" message="Expected &quot;} else {\n&quot;; found &quot;}\nelse\n{\n&quot;" source="PEAR.ControlStructures.ControlSignature"/>
+  <error line="98" column="1" severity="error" message="Line indented incorrectly; expected 8 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="100" column="1" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="100" column="1" severity="error" message="No space found after comma in function call" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma"/>
+  <error line="107" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="107" column="1" severity="error" message="No space found after comma in function call" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma"/>
+  <error line="108" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="112" column="1" severity="error" message="You must use &quot;/**&quot; style comments for a function comment" source="PEAR.Commenting.FunctionComment.WrongStyle"/>
+  <error line="114" column="2" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="118" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="119" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="121" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="121" column="190" severity="warning" message="Line exceeds 85 characters; contains 189 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="123" column="1" severity="error" message="Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n{\n&quot;" source="PEAR.ControlStructures.ControlSignature"/>
+  <error line="123" column="1" severity="error" message="Line indented incorrectly; expected 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="123" column="21" severity="error" message="There must be a single space between the closing parenthesis and the opening brace of a multi-line IF statement; found newline" source="PEAR.ControlStructures.MultiLineCondition.NewlineBeforeOpenBrace"/>
+  <error line="125" column="3" severity="error" message="Expected &quot;for (...) {\n&quot;; found &quot;for (...)\n  {\n&quot;" source="PEAR.ControlStructures.ControlSignature"/>
+  <error line="125" column="3" severity="error" message="Line indented incorrectly; expected 8 spaces, found 2" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="127" column="3" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 2" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="128" column="3" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 2" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="131" column="3" severity="error" message="Expected &quot;if (...) {\n&quot;; found &quot;if (...){&quot;" source="PEAR.ControlStructures.ControlSignature"/>
+  <error line="131" column="3" severity="error" message="Line indented incorrectly; expected 12 spaces, found 2" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="131" column="35" severity="error" message="There must be a single space between the closing parenthesis and the opening brace of a multi-line IF statement; found 0 spaces" source="PEAR.ControlStructures.MultiLineCondition.SpaceBeforeOpenBrace"/>
+  <error line="131" column="36" severity="error" message="Closing brace must be on a line by itself" source="PEAR.WhiteSpace.ScopeClosingBrace.Line"/>
+  <error line="132" column="3" severity="error" message="Expected &quot;} else {\n&quot;; found &quot;}\n  else\n  {\n&quot;" source="PEAR.ControlStructures.ControlSignature"/>
+  <error line="132" column="3" severity="error" message="Line indented incorrectly; expected 12 spaces, found 2" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="134" column="3" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 2" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="134" column="154" severity="warning" message="Line exceeds 85 characters; contains 153 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="141" column="1" severity="error" message="Missing function doc comment" source="PEAR.Commenting.FunctionComment.Missing"/>
+  <error line="143" column="2" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="145" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="146" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="146" column="94" severity="warning" message="Line exceeds 85 characters; contains 93 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="147" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="147" column="88" severity="warning" message="Line exceeds 85 characters; contains 87 characters" source="Generic.Files.LineLength.TooLong"/>
+ </file>
+ <file name="/var/lib/jenkins/workspace/latebloomers/src/viite.php">
+  <error line="2" column="1" severity="error" message="Missing file doc comment" source="PEAR.Commenting.FileComment.Missing"/>
+  <error line="2" column="1" severity="error" message="Missing class doc comment" source="PEAR.Commenting.ClassComment.Missing"/>
+  <error line="4" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="4" column="2" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="4" column="10" severity="error" message="Private member variable &quot;tiedot&quot; must be prefixed with an underscore" source="PEAR.NamingConventions.ValidVariableName.PrivateNoUnderscore"/>
+  <error line="5" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="5" column="2" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="5" column="10" severity="error" message="Private member variable &quot;lisatiedot&quot; must be prefixed with an underscore" source="PEAR.NamingConventions.ValidVariableName.PrivateNoUnderscore"/>
+  <error line="6" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="6" column="2" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="6" column="10" severity="error" message="Private member variable &quot;tagit&quot; must be prefixed with an underscore" source="PEAR.NamingConventions.ValidVariableName.PrivateNoUnderscore"/>
+  <error line="8" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="8" column="2" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="8" column="9" severity="error" message="Missing function doc comment" source="PEAR.Commenting.FunctionComment.Missing"/>
+  <error line="8" column="9" severity="error" message="Line indented incorrectly; expected 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="8" column="27" severity="error" message="Opening brace should be on a new line" source="PEAR.Functions.FunctionDeclaration.BraceOnSameLine"/>
+  <error line="9" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="10" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="12" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="12" column="2" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="13" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="13" column="2" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="13" column="9" severity="error" message="You must use &quot;/**&quot; style comments for a function comment" source="PEAR.Commenting.FunctionComment.WrongStyle"/>
+  <error line="13" column="9" severity="error" message="Line indented incorrectly; expected 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="13" column="52" severity="error" message="Opening brace should be on a new line" source="PEAR.Functions.FunctionDeclaration.BraceOnSameLine"/>
+  <error line="14" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="14" column="2" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="15" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="15" column="2" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="16" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="16" column="2" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="17" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="17" column="2" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="18" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="20" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="20" column="2" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="20" column="9" severity="error" message="You must use &quot;/**&quot; style comments for a function comment" source="PEAR.Commenting.FunctionComment.WrongStyle"/>
+  <error line="20" column="9" severity="error" message="Line indented incorrectly; expected 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="20" column="29" severity="error" message="Opening brace should be on a new line" source="PEAR.Functions.FunctionDeclaration.BraceOnSameLine"/>
+  <error line="21" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="21" column="2" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="22" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="24" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="24" column="2" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="24" column="9" severity="error" message="Missing function doc comment" source="PEAR.Commenting.FunctionComment.Missing"/>
+  <error line="24" column="9" severity="error" message="Line indented incorrectly; expected 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="24" column="33" severity="error" message="Opening brace should be on a new line" source="PEAR.Functions.FunctionDeclaration.BraceOnSameLine"/>
+  <error line="25" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="25" column="2" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="26" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="28" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="28" column="2" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="28" column="9" severity="error" message="Missing function doc comment" source="PEAR.Commenting.FunctionComment.Missing"/>
+  <error line="28" column="9" severity="error" message="Line indented incorrectly; expected 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="28" column="28" severity="error" message="Opening brace should be on a new line" source="PEAR.Functions.FunctionDeclaration.BraceOnSameLine"/>
+  <error line="29" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="29" column="2" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="30" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="32" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="32" column="2" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="32" column="9" severity="error" message="Missing function doc comment" source="PEAR.Commenting.FunctionComment.Missing"/>
+  <error line="32" column="9" severity="error" message="Line indented incorrectly; expected 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="32" column="28" severity="error" message="Opening brace should be on a new line" source="PEAR.Functions.FunctionDeclaration.BraceOnSameLine"/>
+  <error line="33" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="33" column="3" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 2" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="34" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="34" column="3" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 2" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="34" column="87" severity="warning" message="Line exceeds 85 characters; contains 86 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="35" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="37" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="37" column="2" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="37" column="9" severity="error" message="Missing function doc comment" source="PEAR.Commenting.FunctionComment.Missing"/>
+  <error line="37" column="9" severity="error" message="Line indented incorrectly; expected 4 spaces, found 1" source="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="37" column="31" severity="error" message="Opening brace should be on a new line" source="PEAR.Functions.FunctionDeclaration.BraceOnSameLine"/>
+  <error line="38" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+  <error line="39" column="1" severity="error" message="Spaces must be used to indent lines; tabs are not allowed" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
+ </file>
+</checkstyle>
