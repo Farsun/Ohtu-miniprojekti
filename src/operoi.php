@@ -13,14 +13,13 @@ if ($_POST["tyyppi"]=="lisaa") {
     $lisatiedot = array();
     foreach ($_POST as $k => $v) {
         if ($_POST[$k]=="") {
-	} else {
-                if ($k=="author" || $k== "year" || $k== "name" || $k== "key" || $k== "type" ) {
-		} else {
-                    $lisatiedot[$k] = $v;
-		}
-	}
-
+        } else {
+            if ($k=="author" || $k== "year" || $k== "name" || $k== "key" || $k== "type" ) {
+        } else {
+            $lisatiedot[$k] = $v;
+        }
     }
+}
     $viite->lueDatat($tiedot, $lisatiedot, 0);
     //toteutetaan t�hän lisääysysashajöasjöglsmgknlössgmibgoköø
     insert($_POST);
