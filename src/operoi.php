@@ -1,9 +1,7 @@
 <?php
 /**
-* File operoi.php
-*/
-/**
-* tietokantaoperaatiot
+*  File operoi.php
+*  tietokantaoperaatiot
 *
 *  @category Logic
 *  @package Src
@@ -12,7 +10,7 @@
 *  @link operoi
 */
 
-include_once "viite.php";
+require_once "viite.php";
 
 $dbdata = "host=localhost dbname=ohtu user=ohtu password=ohtuproju";
 
@@ -27,11 +25,11 @@ if ($_POST["tyyppi"]=="lisaa") {
         if ($_POST[$k]=="") {
         } else {
             if ($k=="author" || $k== "year" || $k== "name" || $k== "key" || $k== "type" ) {
-        } else {
-            $lisatiedot[$k] = $v;
+            } else {
+                 $lisatiedot[$k] = $v;
+            }
         }
     }
-}
     $viite->lueDatat($tiedot, $lisatiedot, 0);
     //toteutetaan t�hän lisääysysashajöasjöglsmgknlössgmibgoköø
     insert($_POST);
@@ -88,13 +86,16 @@ fclose($file);
 
 /**
 * Tulostaa  bibtex-muotoisen tiedoston tietokannassa olevista viitteistä
-* @param String $name tulostetidoston nimi
-* @param array $data dataa
-* @param array $extradata lisädataa 
+*
+* @param  String $name      tulostetidoston nimi
+* @param  array  $data      dataa
+* @param  array  $extradata lisädataa
+* @return file   $temp      palautustiedosto
 */
-function printtex($name, $data, $extradata) {
+function printtex($name, $data, $extradata) 
+{
 
-    $file = fopen($name,'a') or die ("Failed");
+    $file = fopen($name, 'a') or die ("Failed");
 
     $temp ="";
 
@@ -127,16 +128,19 @@ function printtex($name, $data, $extradata) {
 
     //fputs($file,"$b\n\n");
     $temp="$temp".""."$b\n\n";
-    fputs ($file,"$temp");
+    fputs($file, "$temp");
     fclose($file);
     return $temp;
 }
 
 /**
 * Lisää viitteen tietokantaan
-* @param Viite $viite lisättävä 
+*
+* @param  Viite $viite lisättävä 
+* @return int   $id    lisätyn viitteen tietokantaid
 */
-function insert(Viite $viite) {
+function insert(Viite $viite)
+{
     $dbdata = "host=localhost dbname=ohtu user=ohtu password=ohtuproju";
 
     $data = $viite->getTiedot();
@@ -159,7 +163,9 @@ function insert(Viite $viite) {
 
 /**
 * Poistaa idtä vastaavaan viitteen taulukosta
+*
 * @param int $id poistettava id
+* @return int $id poistettu id
 */
 function remove($id) {
     $dbdata = "host=localhost dbname=ohtu user=ohtu password=ohtuproju";
