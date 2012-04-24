@@ -1,28 +1,32 @@
 <?php
 class Viite
 {
-	private $tiedot = array();
-	private $lisatiedot = array();
-	private $tagit = array();
+    private $_tiedot = array();
+    private $_lisatiedot = array();
+    private $_tagit = array();
 
-	public function lueDatat($tieto, $lisatieto, $tag){
-	//all parameters should be arrays!
-	$this->tiedot = $tieto;
-	$this->lisatiedot = $lisatieto;
-	$this->tagit = $tag;
-	}
+    public function lueDatat($tieto, $lisatieto, $tag)
+    {
+        //all parameters should be arrays!
+        $this->_tiedot = $tieto;
+        $this->_lisatiedot = $lisatieto;
+        $this->_tagit = $tag;
+    }
 
-	public function getTiedot(){
-	return $this->tiedot;
-	}
+    public function getTiedot()
+    {
+        return $this->_tiedot;
+    }
 
-	public function getLisatiedot(){
-	return $this->lisatiedot;
-	}
+    public function getLisatiedot()
+    {
+        return $this->_lisatiedot;
+    }
 
-	public function getTagit(){
-	return $this->tagit;
-	}
+    public function getTagit()
+    {
+        return $this->_tagit;
+    }
 
 }
 ?>
