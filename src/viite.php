@@ -4,11 +4,12 @@
 */
 /**
 * Sisältää viitteen tiedot, sekä funktiot niiden käsittelyyn.
-* @author Farsun
-* @package src
-* @link Viite
-* @license http://sam.zoy.org/wtfpl/
-* @category logic
+*
+*   @category Logic
+*   @package Src
+*   @author Farsun <ville.kukkola@helsinki.fi>
+*   @license http://sam.zoy.org/wtfpl/ DWTFYWT license
+*   @link Viite
 */
 class Viite
 {
