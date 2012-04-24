@@ -24,19 +24,19 @@ class OperoiTest extends PHPUnit_Framework_TestCase
 	public function testPrinttex(Viite $viite){
 		$this->assertEquals($this->temp, printtex("buu",$this->a,$this->b));
 	}
-//
-  //      /** @depends testLueData  */
-//	public function testInsert(Viite $viite){
-//		$d=insert($viite);
-//		$this->assertNotNull($d);
-//		$this->assertGreaterThan(0,$d);
-//	}
-//
-  //      /** @depends testInsert  */
-//	public function testRemove($id){
-//		
-//		$this->assertEquals($this->d, remove($id));
-//	}
+
+      /** @depends testLueData  */
+	public function testInsert(Viite $viite){
+		$d=insert($viite);
+		$this->assertNotNull($d);
+		$this->assertGreaterThan(0,$d);
+	}
+
+      /** @depends testInsert  */
+	public function testRemove($id){
+		
+		$this->assertEquals($this->d, remove($id));
+	}
 
 
 }
