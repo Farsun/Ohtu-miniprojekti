@@ -219,22 +219,23 @@ function getOne($id)
 $dbdata = "host=localhost dbname=ohtu user=ohtu password=ohtuproju";
 $conn = pg_connect($dbdata);
 $kysely = pg_query_params($conn, "SELECT * FROM viite WHERE id = $1", array($id));
-$tiedot=pg_fetch_array($kysely, 0, PGSQL_ASSOC);
-$query = pg_query_params($conn, "SELECT * FROM lisatieto WHERE owner =$1", array($id));
+$tiedot=pg_fetch_array($kysely, NULL, PGSQL_ASSOC);
+if (!$tiedot) {
+    return NULL;
+}
+$query = pg_query_params($conn, "SELECT * FROM lisatieto WHERE owner =$1 AND type <> 'tag'", array($id));
 $extradata=array();
-$tags=array();
-$i=0;
 while ($lisatiedot = pg_fetch_row($query))
 {
-  if ($lisatiedot[1]=="tag")
-  {
-    $tags[$i]=$lisatiedot[2];
-    $i++;
-  }
-  else
-  {
-    $extradata[$lisatiedot[1]]=$lisatiedot[2];
-  }
+  $extradata[$lisatiedot[1]]=$lisatiedot[2];
+}
+$query = pg_query($conn, "SELECT * FROM lisatieto WHERE type = 'tag'");
+$tags=array();
+$i=0;
+while ($tagit = pg_fetch_row($query))
+{
+  $tags[$i]=$tagit;
+  $i++;
 }
 $v = new Viite();
 $v->lueDatat($tiedot, $extradata, $tags);
@@ -254,10 +255,18 @@ return $v;
 function remove($id)
 {
     $dbdata = "host=localhost dbname=ohtu user=ohtu password=ohtuproju";
-
+    $tempViite = getOne($id);
+    if ($tempViite==NULL) {
+        return false;
+    }
     $conn = pg_connect($dbdata);
     $query = pg_query_params($conn, "DELETE FROM lisatieto WHERE owner = $1", array($id));
     $query = pg_query_params($conn, "DELETE FROM viite WHERE id = $1", array($id));
-    return $id;
+    $tempViite = getOne($id);
+    if ($tempViite==NULL) {
+        return true;
+    } else {
+        return false;
+    }
 }
 ?>

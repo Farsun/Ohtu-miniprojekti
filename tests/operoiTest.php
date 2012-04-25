@@ -28,25 +28,28 @@ class OperoiTest extends PHPUnit_Framework_TestCase
 
       /** @depends testLueData  */
 	public function testInsert(Viite $viite){
-		$d=insert($viite);
-		$this->assertNotNull($d);
-		$this->assertGreaterThan(0,$d);
+		$id=insert($viite);
+		$this->assertNotNull($id);
+		$this->assertGreaterThan(0,$id);
+                return $id;
 	}
 
 	/** @depends testInsert */
 	public function testGetOne($id){
 		$temp = getOne($id);
 		$temp3 = array();
-		
-		$this->assertEquals($tempa, $temp->getTiedot());
-		$this->assertEquals($b, $temp->getLisatiedot());
+		$this.tempa["id"] = $id;
+		$this->assertEquals($this->tempa, $temp->getTiedot());
+		$this->assertEquals($this->b, $temp->getLisatiedot());
 		$this->assertEquals($temp3, $temp->getTagit());
+                $temp = getOne(0);
+                $this->assertEquals(NULL, $temp);
 	}
 
       /** @depends testInsert  */
 	public function testRemove($id){
-		
-		$this->assertEquals($this->d, remove($id));
+		$this->assertFalse(remove(0));
+		$this->assertTrue(remove($id));
 	}
 
 
