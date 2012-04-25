@@ -100,8 +100,9 @@ fclose($file);
 */
 function printtex($name, $data, $extradata) 
 {
-
-    $file = fopen($name, 'a') or die ("Failed");
+    if (!$file = fopen($name, 'a')) {
+        return null;
+    }
 
     $temp ="";
 
