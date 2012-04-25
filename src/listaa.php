@@ -1,8 +1,18 @@
 <?php
 /**
-* Pääsivu, listaa yksinkertaistetut tiedot kaikista viitteistä
-* linkit uusien viitteiden lisäämiseen ja bibtex tulostukseen.
+ *  File listaa.php
+ *  Pääsivu, listaa yksinkertaistetut tiedot kaikista viitteistä
+ *  linkit uusien viitteiden lisäämiseen ja bibtex tulostukseen.
+ *
+ *  PHP version 5.3.10
+ *
+ *  @category Logic
+ *  @package  Src
+ *  @author   LateBloomers <sampo.laurila@helsinki.fi>
+ *  @license  http://sam.zoy.org/wtfpl/ DWTFYW
+ *  @link     https://github.com/Farsun/Ohtu-miniprojekti
 */
+
 echo "<html>
 <head>
 <title>Listaus</title> 
