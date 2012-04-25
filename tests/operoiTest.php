@@ -38,7 +38,7 @@ class OperoiTest extends PHPUnit_Framework_TestCase
 	public function testGetOne($id){
 		$temp = getOne($id);
 		$temp3 = array();
-		$this.tempa["id"] = $id;
+		$this->tempa["id"] = $id;
 		$this->assertEquals($this->tempa, $temp->getTiedot());
 		$this->assertEquals($this->b, $temp->getLisatiedot());
 		$this->assertEquals($temp3, $temp->getTagit());
