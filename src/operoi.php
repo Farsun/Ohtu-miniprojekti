@@ -40,7 +40,7 @@ if ($_POST["tyyppi"]=="lisaa") {
     remove($_POST["id"]);
 } else if ($_POST["tyyppi"]=="nayta") {
     $viite = getOne($_POST["id"]);
-    echo printtex("foo", $viite->getTiedot, $viite->getLisatiedot);
+    echo printtex("foo", $viite->getTiedot(), $viite->getLisatiedot());
 } else if ($_POST["tyyppi"]=="tulosta") {
     echo "tulosta<br/>";
     $temp = $_POST["filename"];
@@ -68,7 +68,6 @@ if ($_POST["tyyppi"]=="lisaa") {
 
     echo "<a href=\"$filename\">lataa tiedosto!</a><br/><br/>";
 }
-
 
 echo "<a href=\"listaa.php\">Palaa takaisin!</a>
 </body>
@@ -126,8 +125,7 @@ function printtex($name, $data, $extradata)
     $temp="$temp".""."year = $c$data[$names]$b,\n";
 
     foreach ($extradata as $a => $v) {
-        if ($v=="") {
-        } else {
+        if (!$v=="") {
             //fputs($file,"$a = $c$v$b,\n");
             $temp="$temp".""."$a = $c$v$b,\n";
         }
@@ -174,16 +172,15 @@ function insert(Viite $viite)
 *
 *
 *
-/*
+*/
 
-public function search($where, $what)
+function search($where, $what)
 {
-  $i = array();
 
   $dbdata = "host=localhost dbname=ohtu user=ohtu password=ohtuproju";
 
   $conn = pg_connect($dbdata);
-  $query = pg_query_params($conn, "SELECT DISTINCT id FROM viite WHERE $1 like $2", array($where, $what);
+  $query = pg_query_params($conn, "SELECT DISTINCT id FROM viite WHERE $1=$2", array($where, $what));
   $k=array();
   $i=0;
   if ($where =="type" || $where="author" || $where=="name" || where=="year" || $where=="key")
@@ -265,10 +262,9 @@ function remove($id)
     $query = pg_query_params($conn, "DELETE FROM lisatieto WHERE owner = $1", array($id));
     $query = pg_query_params($conn, "DELETE FROM viite WHERE id = $1", array($id));
     $tempViite = getOne($id);
-    if ($tempViite==null) {
-        return true;
-    } else {
+    if (!$tempViite==null) {
         return false;
     }
+    return true;
 }
 ?>
