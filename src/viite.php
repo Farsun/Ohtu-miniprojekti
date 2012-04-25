@@ -1,6 +1,6 @@
 <?php
 /**
- * File viite.php
+ * Class Viite
  * Sisältää viitteen tiedot, sekä funktiot niiden käsittelyyn.
  *
  * @category Logic
@@ -10,10 +10,6 @@
  * @link     https://github.com/Farsun/Ohtu-miniprojekti
 */
 
-/**
- * Class Viite
- * this is a class comment
-*/
 class Viite
 {
     private $_tiedot = array();
