@@ -1,8 +1,19 @@
  <?php
- /**
- * Tulostaa kentät viitteen tiedoille, joihin käyttäjä täyttää tiedot.
- * Antaa tiedot eteenpäin operoi.php:lle, joka hoitaa logiikan
- */
+/**
+ *  File lisaa.php
+ *  Tulostaa kentät viitteen tiedoille, joihin käyttäjä täyttää tiedot.
+ *  Antaa tiedot eteenpäin operoi.php:lle, joka hoitaa logiikan
+ *
+ *  PHP version 5.3.10
+ *
+ *  @category Logic
+ *  @package  Src
+ *  @author   LateBloomers <sampo.laurila@helsinki.fi>
+ *  @license  http://sam.zoy.org/wtfpl/ DWTFYW
+ *  @link     https://github.com/Farsun/Ohtu-miniprojekti
+*/
+
+
  
  echo "<html><head></head><body>";
  $viitetype = $_POST["viitetype"];
