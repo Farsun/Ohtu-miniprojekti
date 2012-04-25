@@ -9,6 +9,11 @@
  * @license  http://sam.zoy.org/wtfpl/ DWTFYWT license
  * @link     https://github.com/Farsun/Ohtu-miniprojekti
 */
+
+/**
+ * Class Viite
+ * this is a class comment
+*/
 class Viite
 {
     private $_tiedot = array();
