@@ -40,7 +40,7 @@ if ($_POST["tyyppi"]=="lisaa") {
     remove($_POST["id"]);
 } else if ($_POST["tyyppi"]=="nayta") {
     $viite = getOne($_POST["id"]);
-    echo printtex("foo", $viite->getTiedot, $viite->getLisatiedot);
+    
 } else if ($_POST["tyyppi"]=="tulosta") {
     echo "tulosta<br/>";
     $temp = $_POST["filename"];
