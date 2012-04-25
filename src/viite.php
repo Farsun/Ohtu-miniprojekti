@@ -1,5 +1,16 @@
 <?php
 /**
+ * File Viite.php
+ * Sisältää viitteen tiedot, sekä funktiot niiden käsittelyyn.
+ *
+ * @category Logic
+ * @package  Src
+ * @author   Farsun <ville.kukkola@helsinki.fi>
+ * @license  http://sam.zoy.org/wtfpl/ DWTFYWT license
+ * @link     https://github.com/Farsun/Ohtu-miniprojekti
+*/
+
+/**
  * Class Viite
  * Sisältää viitteen tiedot, sekä funktiot niiden käsittelyyn.
  *
