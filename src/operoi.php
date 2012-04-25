@@ -145,8 +145,8 @@ function printtex($name, $data, $extradata)
 */
 function insert(Viite $viite)
 {
-    $dbdata = "host=localhost dbname=ohtu user=ohtu password=ohtuproju";
 
+    $dbdata = "host=localhost dbname=ohtu user=ohtu password=ohtuproju";
     $data = $viite->getTiedot();
     $extradata = $viite->getLisaTiedot();
 
@@ -154,16 +154,56 @@ function insert(Viite $viite)
     $arraynames = array_keys($extradata);
 
     $query = pg_query_params($conn, "INSERT INTO viite (type,key,name,author,year) VALUES ($1,$2,$3,$4,$5)", array($data["type"],$data["key"],$data["name"],$data["author"],$data["year"])) or die ('AYAYAYAYAYAYYAA!');
-    $id=pg_fetch_row(pg_query($conn, "SELECT MAX (id) FROM viite"));
+    $id=pg_fetch_row(pg_query($conn, "SELECT MAX(id) FROM viite"));
     if (count($extradata)>=0) {
-        $as = pg_query($conn, "SELECT MAX(id) FROM viite"); 
-        $id = pg_fetch_row($as);
         foreach ($extradata as $key => $value) {
             $query2 = pg_query_params($conn, "INSERT INTO lisatieto (type, data, owner) VALUES ($1,$2,$3)", array($key,$value,$id[0]));
         }
     }
-    return $id;
+    
+    return $id[0];
 }
+
+/**
+*  Etsii sopivan/sopivat viitteet annettujen parametrien perusteella
+*
+*
+*
+*
+/*
+
+public function search($where, $what)
+{
+  $i = array();
+
+  $dbdata = "host=localhost dbname=ohtu user=ohtu password=ohtuproju";
+
+  $conn = pg_connect($dbdata);
+  $query = pg_query_params($conn, "SELECT DISTINCT id FROM viite WHERE $1 like $2", array($where, $what);
+  $k=array();
+  $i=0;
+  if ($where =="type" || $where="author" || $where=="name" || where=="year" || $where=="key")
+  {
+   while($row=pg_fetch_row($query))
+    {
+      $k[$i]=$row[0];
+      $i++;
+    }
+  }
+  else
+  {
+    $query=pg_query_params($conn, "SELECT DISTINCT owner FROM lisatieto WHERE type = $1 AND data=$2", array($where, $what));
+    while ($row=pg_fetch_row($query))
+    {
+      $k[$i]=$row[0];
+      $i++;
+    }
+  }
+  return $k;
+
+}
+
+
 
 /**
 * Hakee tiedot yksittäisestä osasta.
@@ -178,24 +218,26 @@ function getOne($id)
 {
 $dbdata = "host=localhost dbname=ohtu user=ohtu password=ohtuproju";
 $conn = pg_connect($dbdata);
-$query = pg_query_params($conn, "SELECT * FROM viite WHERE id =$1", array($id));
-$data=pg_fetch_array($query);
-$query = pg_query_params($conn, "SELECT * FROM lisatiedot WHERE owner =$1 AND type NOT tag", array($id));
+$kysely = pg_query_params($conn, "SELECT * FROM viite WHERE id = $1", array($id));
+$tiedot=pg_fetch_array($kysely, 0, PGSQL_ASSOC);
+$query = pg_query_params($conn, "SELECT * FROM lisatieto WHERE owner =$1", array($id));
 $extradata=array();
-while ($data = pg_fetch_row($query))
-{
-  $extradata[$data[1]]=$data[2];
-}
-$query = pg_query($conn, "SELECT * FROM lisatiedot WHERE type = tag");
 $tags=array();
 $i=0;
-while ($data = pg_fetch_row($query))
+while ($lisatiedot = pg_fetch_row($query))
 {
-  $tags[$i]=$data;
-  $i++;
+  if ($lisatiedot[1]=="tag")
+  {
+    $tags[$i]=$lisatiedot[2];
+    $i++;
+  }
+  else
+  {
+    $extradata[$lisatiedot[1]]=$lisatiedot[2];
+  }
 }
 $v = new Viite();
-$v->lueDatat($data, $extradata, $tags);
+$v->lueDatat($tiedot, $extradata, $tags);
 
 return $v;
 }
@@ -214,8 +256,8 @@ function remove($id)
     $dbdata = "host=localhost dbname=ohtu user=ohtu password=ohtuproju";
 
     $conn = pg_connect($dbdata);
-    $query = pg_query_params($conn, "DELETE FROM lisatieto WHERE owner=$1", array($id));
-    $query = pg_query_params($conn, "DELETE FROM viite WHERE id =$1", array($id));
+    $query = pg_query_params($conn, "DELETE FROM lisatieto WHERE owner = $1", array($id));
+    $query = pg_query_params($conn, "DELETE FROM viite WHERE id = $1", array($id));
     return $id;
 }
 ?>
