@@ -43,7 +43,7 @@ while ($row = pg_fetch_row($result)) {
 	<form action=\"operoi.php\" method=\"post\">
 	<input type =\"hidden\" name =\"tyyppi\" value =\"nayta\">
 	<input type =\"hidden\" name =\"id\" value =\"$row[0]\"/>
-	<input type =\"submit\" value=\"Näytä Viite\"/>";
+	<input type =\"submit\" value=\"Viitteen tiedot\"/>";
 
         echo "</br>";
 

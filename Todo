@@ -1,0 +1,15 @@
+Todo:
+
+
+Huomenna to 26.4. klo 13 demo!!!!!
+
+ - BDD kuntoon (PHPUnit BDD-moduuli, v. 3.6+)
+ - Definitions of done kuntoon
+ - Bibtex-skandit (ja muutkin) kuntoon, parsea merkki kerrallaan ja korvaa tarvittaessa toisilla. Esim. suora muutos bibtex-formaattiin ja näytössä tämä korvataan hötömölö-vastaavalla.
+ - operoi.php:n pilkkominen operaatioihin ja muuhun.
+
+ - Tagien lisäys
+  
+ - Haku kuntoon
+ - Viitteen näyttö kuntoon
+ - ACM-import kuntoon
