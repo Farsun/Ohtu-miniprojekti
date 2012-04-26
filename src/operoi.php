@@ -152,10 +152,14 @@ function insert(Viite $viite)
     $data = $viite->getTiedot();
     $extradata = $viite->getLisaTiedot();
 
-    $conn = pg_connect($dbdata) or die ('AYAYAYAYAYYAAAAYAYAYAAA!!');
+    if (!$conn = pg_connect($dbdata)) {
+        return null;
+    }
     $arraynames = array_keys($extradata);
 
-    $query = pg_query_params($conn, "INSERT INTO viite (type,key,name,author,year) VALUES ($1,$2,$3,$4,$5)", array($data["type"],$data["key"],$data["name"],$data["author"],$data["year"])) or die ('AYAYAYAYAYAYYAA!');
+    if (!$query = pg_query_params($conn, "INSERT INTO viite (type,key,name,author,year) VALUES ($1,$2,$3,$4,$5)", array($data["type"],$data["key"],$data["name"],$data["author"],$data["year"]))) {
+        return null;
+    }
     $id=pg_fetch_row(pg_query($conn, "SELECT MAX(id) FROM viite"));
     if (count($extradata)>=0) {
         foreach ($extradata as $key => $value) {
