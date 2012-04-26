@@ -223,7 +223,7 @@ function getOne($id)
     $dbdata = "host=localhost dbname=ohtu user=ohtu password=ohtuproju";
     $conn = pg_connect($dbdata);
     $kysely = pg_query_params($conn, "SELECT * FROM viite WHERE id = $1", array($id));
-    $tiedot=pg_fetch_array($kysely, null, PGSQL_ASSOC
+    $tiedot=pg_fetch_array($kysely, null, PGSQL_ASSOC);
     $tieto = array();
     foreach ($tiedot as $key => $value) {
         $tieto[checkString($key, 0)] = checkString($value, 0);
