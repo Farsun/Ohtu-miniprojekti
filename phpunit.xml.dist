@@ -8,6 +8,7 @@
   <testsuites>
     <testsuite name="ohtu">
       <directory suffix="Test.php">tests</directory>
+      <directory suffix="Spec.php">tests</directory>
     </testsuite>
   </testsuites>
 
