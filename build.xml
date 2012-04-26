@@ -22,7 +22,7 @@
   <exec executable="phpunit" failonerror="true"/>
  </target>
 
- <target name="phpunit-story" description Run BDD tests using PHPUnit's story extension">
+ <target name="phpunit-story" description="Run BDD tests using PHPUnit's story extension">
   <exec dir="${basedir}" executable="phpunit" failonerror="true">
     <arg line="--story --log-xml {$basedir}/build/logs/phpunit-bdd.xml {$basedir}/tests/useCasesSpec" />
   </exec>
