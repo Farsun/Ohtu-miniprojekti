@@ -70,7 +70,7 @@ class UseCasesSpec extends PHPUnit_Extensions_Story_TestCase
 		$world['id'] = insert($world['viite']);
             }
 	    case 'Poista viite': {
-		$world['poistettu'] = remove($world['viite']):
+		$world['poistettu'] = remove($world['viite']);
 	    }
             break;
  
