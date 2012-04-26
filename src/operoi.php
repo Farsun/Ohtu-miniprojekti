@@ -287,20 +287,20 @@ function remove($id)
 *
 */
 function checkString($string, $totex)
-{
+{/*
     if ($totex==1)
     {
-        $string = strtr($string, "ö", '\"{o}');
-        $string = strtr($string, "ä", '\"{a}');
-        $string = strtr($string, "å", '\aa');
+        $string = strtr($string,array("ö", '\"{o}'));
+        $string = strtr($string, array("ä", '\"{a}'));
+        $string = strtr($string, array("å", '\aa'));
     }
     else    
     {
 
-        $string = strtr($string, '\"{o}', 'ö');
-        $string = strtr($string, '\"{a}', 'ä');
-        $string = strtr($string, '\aa', 'å');
-    }
+        $string = strtr($string, array('\"{o}', 'ö'));
+        $string = strtr($string, array('\"{a}', 'ä'));
+        $string = strtr($string, array('\aa', 'å'));
+    }*/
     return $string;
 }
 
