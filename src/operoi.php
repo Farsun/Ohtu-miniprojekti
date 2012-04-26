@@ -34,7 +34,7 @@ if ($_POST["tyyppi"]=="lisaa") {
     }
     $viite->lueDatat($tiedot, $lisatiedot, 0);
     //toteutetaan t�hän lisääysysashajöasjöglsmgknlössgmibgoköø
-    insert($_POST);
+    insert($viite);
 } else if ($_POST["tyyppi"]=="poista") {
     echo "poisto<br/>";
     remove($_POST["id"]);
