@@ -175,41 +175,36 @@ function insert(Viite $viite)
 }
 
 /**
-*  Etsii sopivan/sopivat viitteet annettujen parametrien perusteella
-*
-*
-*
-*
+ * Etsii sopivan/sopivat viitteet annettujen parametrien perusteella
+ *  
+ * @param string $where haettava kenttä
+ * @param string $what  hakusana
+ *
+ * @return array $k löydetyt tiedot
 */
 
 function search($where, $what)
 {
+ 
+    $dbdata = "host=localhost dbname=ohtu user=ohtu password=ohtuproju";
 
-  $dbdata = "host=localhost dbname=ohtu user=ohtu password=ohtuproju";
-
-  $conn = pg_connect($dbdata);
-  $query = pg_query_params($conn, "SELECT DISTINCT id FROM viite WHERE $1=$2", array($where, $what));
-  $k=array();
-  $i=0;
-  if ($where =="type" || $where="author" || $where=="name" || where=="year" || $where=="key")
-  {
-   while($row=pg_fetch_row($query))
-    {
-      $k[$i]=$row[0];
-      $i++;
+    $conn = pg_connect($dbdata);
+    $query = pg_query_params($conn, "SELECT DISTINCT id FROM viite WHERE $1=$2", array($where, $what));
+    $k=array();
+    $i=0;
+    if ($where =="type" || $where="author" || $where=="name" || where=="year" || $where=="key") {
+        while ($row=pg_fetch_row($query)) {
+            $k[$i]=$row[0];
+            $i++;
+        }
+    } else {
+        $query=pg_query_params($conn, "SELECT DISTINCT owner FROM lisatieto WHERE type = $1 AND data=$2", array($where, $what));
+        while ($row=pg_fetch_row($query)) {
+            $k[$i]=$row[0];
+            $i++;
+        }
     }
-  }
-  else
-  {
-    $query=pg_query_params($conn, "SELECT DISTINCT owner FROM lisatieto WHERE type = $1 AND data=$2", array($where, $what));
-    while ($row=pg_fetch_row($query))
-    {
-      $k[$i]=$row[0];
-      $i++;
-    }
-  }
-  return $k;
-
+    return $k;
 }
 
 
