@@ -21,14 +21,14 @@ echo "<html><head><title>Operoi</title></head><body>";
 if ($_POST["tyyppi"]=="lisaa") {
     echo "lisays<br/>";
     $viite = new Viite();
-    $tiedot = array("author"=>$_POST["author"], "year"=>$_POST["year"], "name"=>$_POST["name"],"key"=>$_POST["key"], "type"=>$_POST["type"]);
+    $tiedot = array("author"=>checkString($_POST["author"],1), "year"=>checkString($_POST["year"],1), "name"=>checkString($_POST["name"],1),"key"=>checkString($_POST["key"], 1), "type"=>checkString($_POST["type"], 1));
     $lisatiedot = array();
     foreach ($_POST as $k => $v) {
         if ($_POST[$k]=="") {
         } else {
             if ($k=="author" || $k== "year" || $k== "name" || $k== "key" || $k== "type" ) {
             } else {
-                 $lisatiedot[$k] = $v;
+                 $lisatiedot[$k] = checkString($v,1);
             }
         }
     }
@@ -114,18 +114,22 @@ function printtex($name, $data, $extradata)
     fputs($file,"title = $c$data[3]$b,\n");
     fputs($file,"year = $c$data[2]$b,\n");
     */
-    $names = "type";
-    $names2 = "key";
-    $temp="$temp".""."$data[$names]$c $data[$names2],\n";
-    $names="author";
-    $temp="$temp".""."author = $c$data[$names]$b,\n";
-    $names="name";
-    $temp="$temp".""."title = $c$data[$names]$b,\n";
-    $names="year";
-    $temp="$temp".""."year = $c$data[$names]$b,\n";
+    $names = checkString($data["type"],1);
+    $names2 = checkString($data["key"],1);
+    $temp="$temp".""."$names$c $names2,\n";
+    $names=checkString($data["author"],1);
+    $temp="$temp".""."author = $c$names$b,\n";
+    $names=checkString($data["name"],1);
+    $temp="$temp".""."title = $c$names$b,\n";
+    $names=checkString($data["year"],1);
+    $temp="$temp".""."year = $c$names$b,\n";
 
     foreach ($extradata as $a => $v) {
-        if (!$v=="") {
+        if (!$v=="")
+        {
+            $a=checkString($a,1);
+            $v=checkString($v,1);
+            
             //fputs($file,"$a = $c$v$b,\n");
             $temp="$temp".""."$a = $c$v$b,\n";
         }
@@ -231,13 +235,13 @@ function getOne($id)
     $query = pg_query_params($conn, "SELECT * FROM lisatieto WHERE owner =$1 AND type <> 'tag'", array($id));
     $extradata=array();
     while ($lisatiedot = pg_fetch_row($query)) {
-        $extradata[$lisatiedot[1]]=$lisatiedot[2];
+        $extradata[checkString($lisatiedot[1],0)]=checkString($lisatiedot[2],0);
     }
     $query = pg_query($conn, "SELECT * FROM lisatieto WHERE type = 'tag'");
     $tags=array();
     $i=0;
     while ($tagit = pg_fetch_row($query)) {
-        $tags[$i]=$tagit;
+        $tags[$i]=checkString($tagit,0);
         $i++;
     }
     $v = new Viite();
