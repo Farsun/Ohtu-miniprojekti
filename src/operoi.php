@@ -267,4 +267,32 @@ function remove($id)
     }
     return true;
 }
+
+/**
+* Tarkistaa annetun parametrin ja muuttaa sen käyttökelpoiseen muotoon.
+*
+* @param string @string tarkistettava merkkijono
+* @param int @totex määrittää, muutetaanko ko. merkkijono tex-muotoon, vai näytetäänkö se näytöllä
+*
+* @return string @string muokattu merkkijono.
+*
+*/
+function checkString($string, $totex)
+{
+    if ($totex==1)
+    {
+        $string = strtr($string, "ö", '\"{o}');
+        $string = strtr($string, "ä", '\"{a}');
+        $string = strtr($string, "å", '\aa');
+    }
+    else    
+    {
+
+        $string = strtr($string, '\"{o}', 'ö');
+        $string = strtr($string, '\"{a}', 'ä');
+        $string = strtr($string, '\aa', 'å');
+    }
+    return $string;
+}
+
 ?>
