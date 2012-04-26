@@ -1,6 +1,6 @@
 <?php
 
-include "operoi.php";
+include_once "operoi.php";
 $dbdata = "hostname=localhost dbname=ohtu user=ohtu password=ohtuproju";
 
 echo "<html><head></head><body>";
