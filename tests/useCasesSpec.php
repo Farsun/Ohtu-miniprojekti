@@ -1,7 +1,7 @@
 <?php
 require_once 'PHPUnit/Extensions/Story/TestCase.php';
 require_once 'operoi.php';
-require_once 'viite.php'
+require_once 'viite.php';
  
 class UseCasesSpec extends PHPUnit_Extensions_Story_TestCase
 {
